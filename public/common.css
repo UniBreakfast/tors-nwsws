@@ -1,5 +1,15 @@
 :root {
   --normal-color: black;
+  --normal-back-color: white;
+  --low-contrast-back-color: hsl(0, 0%, 92%);
+  --avg-contrast-back-color: hsl(0, 0%, 85%);
+}
+
+.dark-theme {
+  --normal-color: lightgray;
+  --normal-back-color: black;
+  --low-contrast-back-color: hsl(0, 0%, 10%);
+  --avg-contrast-back-color: hsl(0, 0%, 20%);
 }
 
 * {
@@ -11,18 +21,25 @@
 body, input, button {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
+  transition: .3s;
 }
 
 body {
+  background-color: var(--normal-back-color);
   padding: 20px;
   height: 100vh;
 }
 
 button {
   border: 2px solid var(--normal-color);
+  background-color: var(--avg-contrast-back-color);
   padding: 5px 20px;
   border-radius: 10px;
   outline: none;
+}
+
+button:hover {
+  box-shadow: inset 0 0 9px 1px var(--normal-color);
 }
 
 main {
