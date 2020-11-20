@@ -1,9 +1,11 @@
 const {assign} = Object
-let body
+let body, mousedownTime
 
-const btnSound = new Audio('button.mp3')
-const punchSound = new Audio('punch.mp3')
-punchSound.volume = .03
+const sounds = {
+  click: new Audio('button.mp3'),
+  punch: new Audio('punch.mp3'),
+}
+sounds.punch.volume = .03
 
 const fixTitle = () => document.title = 'Naive Users '+document.title
 
@@ -20,28 +22,24 @@ on('load', () => {
 on('keydown', ({code, ctrlKey, altKey, shiftKey}) => {
   if (ctrlKey && altKey && code=='KeyD') {
     body.classList.toggle('dark-theme')
-    if (body.classList.contains('dark-theme')) {
-      localStorage.darkTheme = true
-    } else {
-      delete localStorage.darkTheme
-    }
+    if (body.classList.contains('dark-theme')) localStorage.darkTheme = true
+    else delete localStorage.darkTheme
   }
 })
-
-on('click', ({target: {tagName}}) => {
-  if (tagName=='BUTTON') {
-    btnSound.currentTime = 0
-    btnSound.play()
-  }
-})
-
-let mousedownTime
 
 on('mousedown', ({timeStamp}) => mousedownTime = timeStamp)
 
 on('mouseup', ({target: {tagName}, timeStamp}) => {
-  if (tagName!='BUTTON' && timeStamp-mousedownTime<200) {
-    punchSound.currentTime = 0
-    punchSound.play()
-  }
+  if (tagName!='BUTTON' && timeStamp-mousedownTime<200) play('punch')
 })
+
+on('click', ({target: {tagName}}) => {
+  if (tagName=='BUTTON') play('click')
+})
+
+
+function play(sound) {
+  sound = sounds[sound]
+  sound.currentTime = 0
+  sound.play()
+}
