@@ -1,0 +1,7 @@
+section>.scroller {
+  min-height: 0;
+}
+
+.scroller>table {
+  margin-bottom: 10px;
+}

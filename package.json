@@ -1,0 +1,23 @@
+{
+  "name": "tors-nwsws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UniBreakfast/tors-nwsws.git"
+  },
+  "keywords": [],
+  "author": "Mykhailo \"Ninin\" Velykoselskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UniBreakfast/tors-nwsws/issues"
+  },
+  "homepage": "https://github.com/UniBreakfast/tors-nwsws#readme",
+  "dependencies": {
+    "node-web-server-with-stuff": "^1.4.0"
+  }
+}
