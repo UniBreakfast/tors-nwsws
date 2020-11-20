@@ -2,8 +2,8 @@ const {assign} = Object
 let body, mousedownTime
 
 const sounds = {
-  click: new Audio('button.mp3'),
-  punch: new Audio('punch.mp3'),
+  click: new Audio('mp3/button.mp3'),
+  punch: new Audio('mp3/punch.mp3'),
 }
 sounds.punch.volume = .03
 
