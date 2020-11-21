@@ -1,14 +1,14 @@
 .dark-theme {
   --normal-color: hsl(0, 0%, 80%);
   --normal-back-color: hsl(0, 0%, 0%);
-  --low-contrast-back-color: hsl(0, 0%, 10%);
+  --low-contrast-back-color: hsl(0, 0%, 13%);
   --avg-contrast-back-color: hsl(0, 0%, 20%);
 }
 
 :root {
   --normal-color: hsl(0, 0%, 20%);
   --normal-back-color: hsl(0, 0%, 99%);
-  --low-contrast-back-color: hsl(0, 0%, 92%);
+  --low-contrast-back-color: hsl(0, 0%, 96%);
   --avg-contrast-back-color: hsl(0, 0%, 85%);
 }
 
@@ -23,7 +23,7 @@ html {
   overflow: hidden;
 }
 
-body, input, button {
+body, fieldset, input, button {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
   transition: .3s;
@@ -33,7 +33,7 @@ body {
   background-color: var(--normal-back-color);
   padding: 20px;
   height: 100vh;
-  transition: .5s;
+  transition: all .3s, transform .5s linear;
 }
 
 button {
@@ -68,6 +68,42 @@ button:active {
   background-color: var(--normal-color);
 }
 
+input {
+  padding: 5px 15px;
+  text-align: center;
+  border: 2px solid var(--normal-color);
+  background-color: var(--normal-back-color);
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 30px;
+}
+
+form>fieldset {
+  padding: 30px 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  border: 2px solid var(--normal-color);
+  background-color: var(--low-contrast-back-color);
+}
+
+form>fieldset>legend {
+  padding: 5px 10px;
+  margin-left: 30px;
+}
+
+form>fieldset>label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
 main {
   max-width: 900px;
   margin: auto;
@@ -92,6 +128,7 @@ main>section {
 buttons {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 30px;
 }
 
