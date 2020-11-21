@@ -10,6 +10,7 @@
   --normal-back-color: hsl(0, 0%, 99%);
   --low-contrast-back-color: hsl(0, 0%, 96%);
   --avg-contrast-back-color: hsl(0, 0%, 85%);
+  --error-color: hsl(0, 80%, 60%);
 }
 
 
@@ -23,7 +24,7 @@ html {
   overflow: hidden;
 }
 
-body, fieldset, input, button {
+body, fieldset, input, button, ul, li {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
   transition: .3s;
@@ -80,6 +81,10 @@ input {
 input:focus {
   box-shadow: 0 0 6px 8px var(--normal-back-color),
               0 0 8px 8px var(--normal-color);
+}
+
+ul {
+  list-style: none;
 }
 
 form {
