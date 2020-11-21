@@ -116,6 +116,7 @@ main {
   display: flex;
   flex-flow: column;
   height: 100%;
+  gap: 20px;
 }
 
 main>header>h1 {
@@ -128,6 +129,7 @@ main>section {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  overflow: auto;
   gap: 30px;
 }
 
@@ -136,9 +138,40 @@ buttons {
   align-items: center;
   justify-content: center;
   gap: 30px;
+  padding: 10px;
 }
 
 body.up { transform: translateY(-100vh) }
 body.down { transform: translateY(100vh) }
 body.left { transform: translateX(-100vw) }
 body.right { transform: translateX(100vw) }
+
+.scrollable {
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+th, td {
+  padding: 5px 15px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--low-contrast-back-color);
+}
+
+tr:only-child {
+  background-color: var(--avg-contrast-back-color);
+}
+
+::-webkit-scrollbar {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  border: 2px solid var(--normal-color);
+  background-color: var(--avg-contrast-back-color);
+  border-radius: 10px;
+}
