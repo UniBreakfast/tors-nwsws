@@ -24,10 +24,11 @@ on('load', () => {
   body.classList.add(side)
   setTimeout(() => {
     body.classList.remove(side)
-    body.ontransitionend = () => {
+    if (side) body.ontransitionend = () => {
       body.querySelector('[autofocus]')?.focus()
       body.ontransitionend = null
     }
+    else body.querySelector('[autofocus]')?.focus()
   })
   body.hidden = false
 })
