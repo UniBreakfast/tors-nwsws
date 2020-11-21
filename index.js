@@ -1,4 +1,4 @@
-const users = [
+global.users = [
   {login: 'admin', name: 'Administrator', token: 'qwerty'},
   {login: 'bob', name: 'Robert', token:'asdfgh'},
 ]
