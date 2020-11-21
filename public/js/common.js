@@ -46,7 +46,7 @@ on('mouseup', ({target: {tagName}, timeStamp}) => {
 on('click', ({target, target: {tagName, dataset: {url, side}}}) => {
   if (tagName=='BUTTON') play('click')
 
-  if (tagName=='BUTTON' && url) goTo(url, side)
+  if (tagName=='BUTTON' && url) setTimeout(goTo, 150, url, side)
 })
 
 

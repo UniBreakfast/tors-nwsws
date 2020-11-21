@@ -22,10 +22,39 @@
     </header>
 
     <section>
-      <div>
-        <button data-href="register.html" data-direction="left">Register</button>
-        <button data-href="login.html" data-direction="right">Log In</button>
-      </div>
+      <label>
+        Already a user?
+        <button data-url="login" data-side="right">Log In</button>
+      </label>
+
+      <form id="regForm" action="javascript:">
+        <fieldset>
+          <legend>registration form</legend>
+
+          <label>
+            Enter your name:
+            <input name="name" type="text">
+          </label>
+          <label>
+            What would be your login:
+            <input name="login" type="text">
+          </label>
+          <label>
+            Come up with the password:
+            <input name="password" type="text">
+          </label>
+          <label>
+            Confirm your password:
+            <input name="confirm" type="text">
+          </label>
+        </fieldset>
+        <buttons>
+          <button type="submit" data-url="login" data-side="right">
+            Register
+          </button>
+          <button type="reset">Clear</button>
+        </buttons>
+      </form>
     </section>
   </main>
 </body>

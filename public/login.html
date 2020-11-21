@@ -21,10 +21,31 @@
     </header>
 
     <section>
-      <div>
-        <button data-href="register.html" data-direction="left">Register</button>
-        <button data-href="login.html" data-direction="right">Log In</button>
-      </div>
+      <label>
+        Not registered yet?
+        <button data-url="register" data-side="left">Register</button>
+      </label>
+
+      <form id="loginForm" action="javascript:">
+        <fieldset>
+          <legend>log in form</legend>
+
+          <label>
+            Enter your login:
+            <input name="login" type="text">
+          </label>
+          <label>
+            What is your password:
+            <input name="password" type="text">
+          </label>
+        </fieldset>
+        <buttons>
+          <button type="submit" data-url="users" data-side="down">
+            Log In
+          </button>
+          <button type="reset">Clear</button>
+        </buttons>
+      </form>
     </section>
   </main>
 </body>

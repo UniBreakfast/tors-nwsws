@@ -19,23 +19,28 @@
   margin: 0;
 }
 
+html {
+  overflow: hidden;
+}
+
 body, input, button {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
   transition: .3s;
-  overflow-x: hidden;
 }
 
 body {
   background-color: var(--normal-back-color);
   padding: 20px;
   height: 100vh;
+  transition: .5s;
 }
 
 button {
   border: 2px solid var(--normal-color);
   background-color: var(--avg-contrast-back-color);
   padding: 5px 20px;
+  margin: 5px 15px;
   border-radius: 10px;
   outline: none;
 }
@@ -78,8 +83,10 @@ main>header>h1 {
 main>section {
   flex-grow: 1;
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 buttons {
