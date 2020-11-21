@@ -74,6 +74,12 @@ input {
   border: 2px solid var(--normal-color);
   background-color: var(--normal-back-color);
   border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 6px 8px var(--normal-back-color),
+              0 0 8px 8px var(--normal-color);
 }
 
 form {
