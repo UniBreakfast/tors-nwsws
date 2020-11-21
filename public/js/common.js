@@ -20,11 +20,12 @@ on('load', () => {
   const {darkTheme, sideToComeFrom: side} = localStorage
   if (darkTheme) body.classList.add('dark-theme')
 
-  if (side) {
-    delete localStorage.sideToComeFrom
-    body.classList.add(side)
-    setTimeout(() => body.classList.remove(side))
-  }
+  delete localStorage.sideToComeFrom
+  body.classList.add(side)
+  setTimeout(() => {
+    body.classList.remove(side)
+    body.querySelector('[autofocus]')?.focus()
+  })
   body.hidden = false
 })
 
