@@ -7,6 +7,9 @@ const sounds = {
 }
 sounds.punch.volume = .03
 
+const sides = {left: 'right', right: 'left', up: 'down', down: 'up'}
+
+
 const fixTitle = () => document.title = 'Naive Users '+document.title
 
 EventTarget.prototype.on = addEventListener
@@ -16,7 +19,6 @@ on('load', () => {
   ({body} = document)
   if (localStorage.darkTheme) body.classList.add('dark-theme')
   body.hidden = false
-
 })
 
 on('keydown', ({code, ctrlKey, altKey, shiftKey}) => {
@@ -33,13 +35,23 @@ on('mouseup', ({target: {tagName}, timeStamp}) => {
   if (tagName!='BUTTON' && timeStamp-mousedownTime<200) play('punch')
 })
 
-on('click', ({target: {tagName}}) => {
+on('click', ({target, target: {tagName, dataset: {url, side}}}) => {
   if (tagName=='BUTTON') play('click')
+
+  if (tagName=='BUTTON' && url) goTo(url, side)
 })
+
 
 
 function play(sound) {
   sound = sounds[sound]
   sound.currentTime = 0
   sound.play()
+}
+
+function goTo(url, side) {
+  localStorage.sideToComeFrom = side
+  side = sides[side]
+  body.classList.add(side)
+  body.on('transitionend', location.href = url)
 }
