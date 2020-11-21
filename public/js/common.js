@@ -17,7 +17,14 @@ EventTarget.prototype.on = addEventListener
 
 on('load', () => {
   ({body} = document)
-  if (localStorage.darkTheme) body.classList.add('dark-theme')
+  const {darkTheme, sideToComeFrom: side} = localStorage
+  if (darkTheme) body.classList.add('dark-theme')
+
+  if (side) {
+    delete localStorage.sideToComeFrom
+    body.classList.add(side)
+    setTimeout(() => body.classList.remove(side))
+  }
   body.hidden = false
 })
 

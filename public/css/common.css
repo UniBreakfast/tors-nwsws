@@ -23,6 +23,7 @@ body, input, button {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
   transition: .3s;
+  overflow-x: hidden;
 }
 
 body {
@@ -86,3 +87,8 @@ buttons {
   align-items: center;
   gap: 30px;
 }
+
+body.up { transform: translateY(-100vh) }
+body.down { transform: translateY(100vh) }
+body.left { transform: translateX(-100vw) }
+body.right { transform: translateX(100vw) }
