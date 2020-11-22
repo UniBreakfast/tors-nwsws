@@ -3,7 +3,7 @@ module.exports = ({request, response, users}) => {
   if (!token) return
 
   const user = users.find(user => user.token == token)
-  if (!user) return
+  if (!user) return response.delCookie('token')
 
   response.setCookie('token', token)
   return user

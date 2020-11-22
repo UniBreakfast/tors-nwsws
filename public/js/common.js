@@ -65,5 +65,6 @@ function goTo(url, side) {
   localStorage.sideToComeFrom = side
   side = sides[side]
   body.classList.add(side)
+  if (!side) location.href = url
   body.on('transitionend', () => location.href = url)
 }
