@@ -4,11 +4,14 @@ regForm.onsubmit = async () => {
   const user = fromEntries(new FormData(regForm))
   const issues = await validate(user)
   if (issues.length) return issues.show()
+  delete user.confirm
   const request = {method: 'POST', body: stringify(user)}
   const response = await fetch('/api/register', request)
   const answer = await response.json()
   if (answer.success) goTo('login', 'right')
+  else new Issues(...answer.issues).show()
 }
+
 
 async function validate(user) {
   const {name, login, password, confirm} = user
@@ -34,6 +37,14 @@ async function validate(user) {
   return issues
 }
 
+
+async function isFree(login) {
+  const response = await fetch('/api/isfree?login='+login)
+  const answer = await response.json()
+  return answer.vacant == true
+}
+
+
 class Issues extends Array {
   add(name, issue) { this.push({name, issue}) }
   require(name) { this.push({name, issue: 'required'}) }
@@ -47,10 +58,4 @@ class Issues extends Array {
     body.append(issues)
     issues.onanimationend = () => issues.remove()
   }
-}
-
-async function isFree(login) {
-  const response = await fetch('/api/isfree?login='+login)
-  const answer = await response.json()
-  return answer.vacant == true
 }
