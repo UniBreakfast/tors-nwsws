@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/users.css">
 
   <script src="js/common.js"></script>
+  <script src="js/users.js" defer></script>
 
   <title> - All Users</title>
   <script>fixTitle()</script>
@@ -27,24 +28,14 @@
       </buttons>
 
       <div class="scrollable">
-        <table id="usersTable">
+        <table id="userTable">
           <thead>
             <tr>
               <th>login</th>
               <th>name</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>admin</td>
-              <td>John Smith</td>
-            </tr>
-          </tbody>
-          <script id="tempScript">
-            usersTable.tBodies[0].innerHTML =
-              usersTable.tBodies[0].innerHTML.repeat(60)
-            tempScript.remove()
-          </script>
+          <tbody></tbody>
           <tfoot>
             <tr>
               <th>login</th>
