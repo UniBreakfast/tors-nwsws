@@ -4,6 +4,7 @@ regForm.onsubmit = async () => {
   const user = fromEntries(new FormData(regForm))
   const issues = await validate(user)
   if (issues.length) return issues.show()
+
   delete user.confirm
   const request = {method: 'POST', body: stringify(user)}
   const response = await fetch('/api/register', request)

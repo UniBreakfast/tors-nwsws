@@ -1,10 +1,11 @@
 exports.post = {
   access: 'guest',
-  handler: async ({req: {data}, users}) => {
+  handler: async ({request: {data}, users}) => {
     const {login, password, name} = await data
     const user = {login, password, name}
     const issues = validate(user)
     if (issues.length) return {success: false, issues}
+
     users.push(user)
     return {success: true}
   }
