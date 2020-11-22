@@ -44,7 +44,7 @@ on('keydown', ({code, ctrlKey, altKey, shiftKey}) => {
 on('mousedown', ({timeStamp}) => mousedownTime = timeStamp)
 
 on('mouseup', ({target: {tagName}, timeStamp}) => {
-  if (tagName!='BUTTON' && timeStamp-mousedownTime<200) play('punch')
+  if (tagName!='BUTTON' && timeStamp-mousedownTime<200) play('touch')
 })
 
 on('click', ({target: {tagName, dataset: {url, side}}}) => {
