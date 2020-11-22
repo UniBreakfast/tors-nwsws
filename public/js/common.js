@@ -62,9 +62,15 @@ function play(sound) {
 }
 
 function goTo(url, side) {
+  ({body} = document)
   localStorage.sideToComeFrom = side
   side = sides[side]
   body.classList.add(side)
   if (!side) location.href = url
   body.on('transitionend', () => location.href = url)
+}
+
+async function checkIn() {
+  const response = await fetch('/api/checkin')
+  if (response.ok && (await response.json()).session) return true
 }

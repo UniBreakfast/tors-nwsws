@@ -1,4 +1,4 @@
-on('load', getUsers)
+getUsers()
 
 
 async function getUsers() {
