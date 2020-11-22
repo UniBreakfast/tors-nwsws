@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/UniBreakfast/tors-nwsws#readme",
   "dependencies": {
-    "node-web-server-with-stuff": "^1.4.2"
+    "node-web-server-with-stuff": "^1.4.3"
   }
 }

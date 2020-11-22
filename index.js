@@ -5,6 +5,5 @@ global.users = [
 
 const { server, c } = require('node-web-server-with-stuff')
 
-c('index')
 
 server.run({given: {users}})
