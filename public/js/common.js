@@ -3,9 +3,9 @@ let body, mousedownTime
 
 const sounds = {
   click: new Audio('mp3/button.mp3'),
-  punch: new Audio('mp3/punch.mp3'),
+  touch: new Audio('mp3/punch.mp3'),
 }
-sounds.punch.volume = .03
+sounds.touch.volume = .1
 
 const sides = {left: 'right', right: 'left', up: 'down', down: 'up'}
 
@@ -47,7 +47,7 @@ on('mouseup', ({target: {tagName}, timeStamp}) => {
   if (tagName!='BUTTON' && timeStamp-mousedownTime<200) play('punch')
 })
 
-on('click', ({target, target: {tagName, dataset: {url, side}}}) => {
+on('click', ({target: {tagName, dataset: {url, side}}}) => {
   if (tagName=='BUTTON') play('click')
 
   if (tagName=='BUTTON' && url) setTimeout(goTo, 150, url, side)
