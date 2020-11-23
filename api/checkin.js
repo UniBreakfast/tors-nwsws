@@ -1,4 +1,6 @@
+const check = require('../access/user')
+
 exports.get = {
-  access: 'user',
-  handler: () => ({session: true})
+  access: 'guest',
+  handler: (props) => ({success: !!check(props)})
 }
