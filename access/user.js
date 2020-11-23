@@ -1,5 +1,3 @@
-const { c } = require("node-web-server-with-stuff")
-
 module.exports = ({request, response, users}) => {
   const {token} = request.cookie
   if (!token) return

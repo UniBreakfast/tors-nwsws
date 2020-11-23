@@ -7,7 +7,7 @@ exports.post = {
     if (issues.length) return {success: false, issues}
 
     user = users.find(user => user.login==login)
-    if (!user) issues.add('login', 'not found')
+    if (!user) issues.add('login', 'user not found')
     else if (user.password != password) issues.add('password', 'incorrect')
     if (issues.length) return {success: false, issues}
 
