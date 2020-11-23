@@ -1,13 +1,16 @@
 exports.post = {
   access: 'guest',
-  handler: async ({request: {data}, users}) => {
+  handler: async ({request: {data}, users, hash}) => {
     const {login, password, name} = await data
     const user = {login, password, name}
     const issues = validate(user)
     if (issues.length) return {success: false, issues}
 
-    users.push(user)
-    return {success: true}
+    delete user.password
+    user.hash = await hash(password)
+    const unique = users.every(user => user.login != login)
+    if (unique) users.push(user)
+    return {success: unique}
   }
 }
 

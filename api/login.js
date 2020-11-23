@@ -1,6 +1,6 @@
 exports.post = {
   access: 'guest',
-  handler: async ({request: {data}, response, users}) => {
+  handler: async ({request: {data}, response, users, verify}) => {
     const {login, password} = await data
     let user = {login, password}
     const issues = validate(user)
@@ -8,7 +8,9 @@ exports.post = {
 
     user = users.find(user => user.login==login)
     if (!user) issues.add('login', 'user not found')
-    else if (user.password != password) issues.add('password', 'incorrect')
+    else if (! await verify(password, user.hash))
+      issues.add('password', 'incorrect')
+
     if (issues.length) return {success: false, issues}
 
     user.token = generateDashedToken()

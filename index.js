@@ -4,6 +4,7 @@ global.users = [
 ]
 
 const { server, c } = require('node-web-server-with-stuff')
+const {hash, verify} = require('./hashVerify.cjs')
 
 
-server.run({given: {users}})
+server.run({given: {users, hash, verify}})
