@@ -24,17 +24,17 @@ html {
   overflow: hidden;
 }
 
-body, fieldset, input, button, ul, li {
+body, fieldset, input, button, ul, li, tr, th, td {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
-  transition: .3s;
+  transition: .5s linear;
 }
 
 body {
   background-color: var(--normal-back-color);
   padding: 20px;
   height: 100vh;
-  transition: all .3s, transform .5s linear;
+  transition: .5s linear;
 }
 
 button {
