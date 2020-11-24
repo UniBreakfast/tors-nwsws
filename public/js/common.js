@@ -59,6 +59,7 @@ function play(sound) {
   sound = sounds[sound]
   sound.currentTime = 0
   sound.play()
+  setTimeout(() => sound.pause(), sound.duration*999)
 }
 
 function goTo(url, side) {
