@@ -27,14 +27,14 @@ html {
 body, fieldset, input, button, ul, li, tr, th, td {
   font: 20px Trebuchet MS, Helvetica, sans-serif;
   color: var(--normal-color);
-  transition: .5s linear;
+  transition: .3s, color 1s, background-color 1s;
 }
 
 body {
   background-color: var(--normal-back-color);
   padding: 20px;
   height: 100vh;
-  transition: .5s linear;
+  transition: .3s, transform .5s linear, color 1s, background-color 1s;
 }
 
 button {
