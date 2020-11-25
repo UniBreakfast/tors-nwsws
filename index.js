@@ -7,7 +7,7 @@ const {hash, verify} = require('./hashVerify.cjs')
 const {connect, ObjectId} = require('./useMongo.cjs')
 const db = connect()
 
-const given = {users, hash, verify, db, ObjectId}
+const given = {hash, verify, db, ObjectId}
 
 server.run({given})
 
