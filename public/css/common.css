@@ -166,7 +166,7 @@ tr:nth-child(even) {
   background-color: var(--low-contrast-back-color);
 }
 
-tr:only-child {
+:not(tbody)>tr {
   background-color: var(--avg-contrast-back-color);
 }
 
