@@ -1,4 +1,4 @@
 exports.get = {
   access: 'user',
-  handler: ({users}) => users
+  handler: ({db}) => db.collection('users').find().toArray()
 }

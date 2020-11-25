@@ -1,8 +1,8 @@
-module.exports = ({request, response, users}) => {
+module.exports = async ({request, response, db}) => {
   const {token} = request.cookie
   if (!token) return
 
-  const user = users.find(user => user.token == token)
+  const user = await db.collection('users').findOne({token})
   if (!user) return response.delCookie('token')
 
   response.setCookie('token', token)

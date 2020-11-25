@@ -1,20 +1,21 @@
 exports.post = {
   access: 'guest',
-  handler: async ({request: {data}, response, users, verify}) => {
+  handler: async ({request: {data}, response, db, verify}) => {
     const {login, password} = await data
     let user = {login, password}
     const issues = validate(user)
     if (issues.length) return {success: false, issues}
 
-    user = users.find(user => user.login==login)
+    user = await db.collection('users').findOne({login})
     if (!user) issues.add('login', 'user not found')
     else if (! await verify(password, user.hash))
       issues.add('password', 'incorrect')
 
     if (issues.length) return {success: false, issues}
 
-    user.token = generateDashedToken()
-    response.setCookie('token', user.token)
+    const token = generateDashedToken()
+    db.collection('users').findOneAndUpdate({login}, {$set: {token}})
+    response.setCookie('token', token)
     return {success: true}
   }
 }

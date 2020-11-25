@@ -1,7 +1,7 @@
 exports.get = {
   access: 'user',
-  handler: ({response, grant}) => {
-    delete grant.token
+  handler: ({response, grant: user, db}) => {
+    db.collection('users').findOneAndUpdate(user, {$unset: {token: ''}})
     response.delCookie('token')
     return {success: true}
   }

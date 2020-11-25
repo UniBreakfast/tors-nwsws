@@ -1,21 +1,21 @@
 exports.post = {
   access: 'guest',
-  handler: async ({request: {data}, users, hash}) => {
+  handler: async ({request: {data}, db, hash}) => {
     const {login, password, name} = await data
     const user = {login, password, name}
-    const issues = validate(user)
+    const issues = await validate(user, db)
     if (issues.length) return {success: false, issues}
 
     delete user.password
     user.hash = await hash(password)
-    const unique = users.every(user => user.login != login)
-    if (unique) users.push(user)
+    const unique = ! await db.collection('users').findOne({login})
+    if (unique) db.collection('users').insertOne(user)
     return {success: unique}
   }
 }
 
 
-function validate(user) {
+async function validate(user, db) {
   const {login, password, name} = user
   const issues = new Issues
 
@@ -26,7 +26,7 @@ function validate(user) {
   if (!login) issues.require('login')
   else if (!login.match(/^\w{2,32}$/))  issues.add('login',
     'only latin letters, numbers and underscore, from 2 to 32 characters')
-  else if (users.some(user => user.login == login))
+  else if (await db.collection('users').findOne({login}))
     issues.add('login', 'occupied')
 
   if (!password) issues.require('password')

@@ -1,5 +1,5 @@
 exports.get = {
   access: 'guest',
-  handler: ({request: {query: {login}}, users}) =>
-    ({vacant: users.every(user => user.login!=login)})
+  handler: async ({request: {query: {login}}, db}) =>
+    ({vacant: ! await db.collection('users').findOne({login})})
 }
