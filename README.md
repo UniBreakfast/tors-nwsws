@@ -4,6 +4,8 @@
 
 [stuff.cjs](https://gist.github.com/UniBreakfast/0c719583fc8f9a16361ab28136884a43)
 
+### Press `Ctrl + Alt + Shift + D` to switch between Light / Dark Theme!
+
 ## Техническое задание
 
 1. В проекте четыре html-страницы. Четвёртая требует авторизации. Первые три переадресуют пользователя на четвёртую, если он авторизован.
