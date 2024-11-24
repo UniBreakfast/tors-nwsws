@@ -47,7 +47,16 @@ A. Выполнять как можно скорее, не делая, по во
 
 ![image](https://github.com/user-attachments/assets/90812262-f30e-4791-93c0-283e1256e6d3)
 
+![image](https://github.com/user-attachments/assets/219af95a-2ad3-472a-a8fb-7d97a9f267b6)
+
 ![image](https://github.com/user-attachments/assets/a9dc6fd9-bcda-4b1b-a66f-47eb99c2a7f6)
+
+![image](https://github.com/user-attachments/assets/c03c52c0-606e-42c6-8cba-2db11e722eac)
 
 ![image](https://github.com/user-attachments/assets/59b31803-c1b6-4654-8a53-8714cb8aaaf1)
 
+![image](https://github.com/user-attachments/assets/04c32c7e-7efd-42df-8f88-d58346b903b2)
+
+![image](https://github.com/user-attachments/assets/0a93455e-926c-45cb-892e-979255c3b1d5)
+
+![image](https://github.com/user-attachments/assets/c3668392-f1dd-4010-9f8e-901629d411df)
