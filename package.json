@@ -19,6 +19,6 @@
   "homepage": "https://github.com/UniBreakfast/tors-nwsws#readme",
   "dependencies": {
     "mongodb": "^3.6.3",
-    "node-web-server-with-stuff": "^1.4.5"
+    "node-web-server-with-stuff": "^1.4.11"
   }
 }

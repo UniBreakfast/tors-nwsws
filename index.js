@@ -9,7 +9,7 @@ const db = connect()
 
 const given = {hash, verify, db, ObjectId}
 
-server.run({given})
+server.run({given, secure: true})
 
 
 // db.then(db => global.db = db)
