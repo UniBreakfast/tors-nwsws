@@ -1,6 +1,6 @@
 # [tors-nwsws](https://github.com/UniBreakfast/tors-nwsws)
 
-### A project driven by Terms of Reference <br> on node-web-server-with-stuff module
+### A project driven by Terms of Reference <br> on [node-web-server-with-stuff](https://www.npmjs.com/package/node-web-server-with-stuff) module
 
 [stuff.cjs](https://gist.github.com/UniBreakfast/0c719583fc8f9a16361ab28136884a43)
 
